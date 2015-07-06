@@ -386,7 +386,7 @@
                 
                 ((OTPStopBasedLegCell *)cell).departureTimeLabel.text = [NSString stringWithFormat:@"%@", [dateFormatter stringFromDate:leg.startTime]];
                 
-                int intermediateStops = leg.intermediateStops.count + 1;
+                NSInteger  intermediateStops = leg.intermediateStops.count + 1;
                 NSString *stopUnitLabel = intermediateStops == 1 ? @"stop" : @"stops";
                 ((OTPStopBasedLegCell *)cell).stopsLabel.text = [NSString stringWithFormat:@"%u %@", intermediateStops, stopUnitLabel];
                 

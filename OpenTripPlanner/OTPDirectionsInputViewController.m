@@ -65,7 +65,7 @@ Response *currentResponse;
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    int canShareUrls = [defaults integerForKey:@"canShareUrls"];
+    NSInteger  canShareUrls = [defaults integerForKey:@"canShareUrls"];
     if (canShareUrls == 0) {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Improve OTP Mobile" message:@"Can OTP Mobile include an anonymous device identifier with its routing requests? This information will help us improve OTP Mobile for you." delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
         alertView.tag = 0;
@@ -79,7 +79,7 @@ Response *currentResponse;
     
     self.goButton.enabled = NO;
     
-    int selectedModeIndex = [defaults integerForKey:@"selectedModeIndex"] < self.modeControl.numberOfSegments ? [defaults integerForKey:@"selectedModeIndex"] : 0;
+    NSInteger selectedModeIndex = [defaults integerForKey:@"selectedModeIndex"] < self.modeControl.numberOfSegments ? [defaults integerForKey:@"selectedModeIndex"] : 0;
     self.modeControl.selectedSegmentIndex = selectedModeIndex;
     [self modeChanged:self.modeControl];
     
