@@ -478,7 +478,7 @@
     
     // Overview cell selected
     if (indexPath.row == 0) {
-        [TestFlight passCheckpoint:@"ITINERARY_DISPLAY_OVERVIEW"];
+      //  [TestFlight passCheckpoint:@"ITINERARY_DISPLAY_OVERVIEW"];
         [UIView animateWithDuration:0.3 animations:^{
             self.itineraryMapViewController.instructionLabel.center = CGPointMake(self.itineraryMapViewController.instructionLabel.center.x, self.itineraryMapViewController.instructionLabel.center.y - self.itineraryMapViewController.instructionLabel.bounds.size.height);
         } completion:^(BOOL finished) {
@@ -517,7 +517,7 @@
     // Arrival cell (the last cell) selected
     if ((!_shouldDisplaySteps && indexPath.row == self.itinerary.legs.count + 1) ||
                (_shouldDisplaySteps && indexPath.row == _allSteps.count + 1)) {
-        [TestFlight passCheckpoint:@"ITINERARY_DISPLAY_ARRIVAL"];
+      //  [TestFlight passCheckpoint:@"ITINERARY_DISPLAY_ARRIVAL"];
         [self resetLegsWithColor:[UIColor colorWithRed:0 green:0 blue:1 alpha:0.5]];
         Leg *leg = [self.itinerary.legs lastObject];
         CLLocationCoordinate2D sw = CLLocationCoordinate2DMake(leg.to.lat.floatValue - 0.001, leg.to.lon.floatValue - 0.001);
@@ -525,7 +525,7 @@
         [self.itineraryMapViewController.mapView zoomWithLatitudeLongitudeBoundsSouthWest:sw northEast:ne animated:YES];
     // Handle step based segments
     } else if (_shouldDisplaySteps) {
-        [TestFlight passCheckpoint:@"ITINERARY_DISPLAY_STEP"];
+      //  [TestFlight passCheckpoint:@"ITINERARY_DISPLAY_STEP"];
         Step *step = [_allSteps objectAtIndex:indexPath.row-1];
         CLLocationCoordinate2D sw = CLLocationCoordinate2DMake(step.lat.doubleValue - 0.002, step.lon.doubleValue - 0.002);
         CLLocationCoordinate2D ne = CLLocationCoordinate2DMake(step.lat.doubleValue + 0.002, step.lon.doubleValue + 0.002);
@@ -533,7 +533,7 @@
         
     // Handle leg based segments
     } else {
-        [TestFlight passCheckpoint:@"ITINERARY_DISPLAY_LEG"];
+      //  [TestFlight passCheckpoint:@"ITINERARY_DISPLAY_LEG"];
         [self resetLegsWithColor:[UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:0.5]];
         RMShape *shape = [_shapesForLegs objectAtIndex:indexPath.row - 1];
         shape.lineColor = [UIColor colorWithRed:0 green:0 blue:1 alpha:0.5];
@@ -558,10 +558,10 @@
     
     _mapShowing = YES;
     if (_selectedIndexPath == nil) {
-        [TestFlight passCheckpoint:@"ITINERARY_SHOW_MAP_WITH_SWIPE"];
+     //   [TestFlight passCheckpoint:@"ITINERARY_SHOW_MAP_WITH_SWIPE"];
         _selectedIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     } else {
-        [TestFlight passCheckpoint:@"ITINERARY_SHOW_MAP_FROM_TAP"];
+     //   [TestFlight passCheckpoint:@"ITINERARY_SHOW_MAP_FROM_TAP"];
     }
     [self.itineraryTableViewController.tableView selectRowAtIndexPath:_selectedIndexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
 }
@@ -569,7 +569,7 @@
 - (void)revealController:(ZUUIRevealController *)revealController didHideRearViewController:(UIViewController *)rearViewController
 {
     if (revealController.currentFrontViewPosition != FrontViewPositionLeft) return;
-    [TestFlight passCheckpoint:@"ITINERARY_HIDE_MAP_WITH_SWIPE"];
+    //[TestFlight passCheckpoint:@"ITINERARY_HIDE_MAP_WITH_SWIPE"];
     _mapShowing = NO;
     [self.itineraryTableViewController.tableView deselectRowAtIndexPath:[self.itineraryTableViewController.tableView indexPathForSelectedRow] animated:YES];
 }

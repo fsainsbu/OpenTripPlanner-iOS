@@ -25,7 +25,7 @@
 {
     #define TESTING 1
     #ifdef TESTING
-        [TestFlight setDeviceIdentifier:[[UIDevice currentDevice] uniqueIdentifier]];
+      //  [TestFlight setDeviceIdentifier:[[UIDevice currentDevice] uniqueIdentifier]];
     #endif
     [TestFlight takeOff:@"<YOUR TESTFLIGHT TEAM TOKEN HERE>"];
     
@@ -133,7 +133,7 @@
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
     
     if ([MKDirectionsRequest isDirectionsRequestURL:url]) {
-        [TestFlight passCheckpoint:@"LAUNCHED_BY_URL"];
+     //   [TestFlight passCheckpoint:@"LAUNCHED_BY_URL"];
         
         MKDirectionsRequest* directionsInfo = [[MKDirectionsRequest alloc] initWithContentsOfURL:url];
         // TO DO: Plot and display the route using the

@@ -162,9 +162,9 @@ Response *currentResponse;
 {
     if (alertView.tag != 0) return;
     if (buttonIndex == 0) {
-        [TestFlight passCheckpoint:@"UID_OPT_OUT"];
+     //   [TestFlight passCheckpoint:@"UID_OPT_OUT"];
     } else if (buttonIndex == 1) {
-        [TestFlight passCheckpoint:@"UID_OPT_IN"];
+  //      [TestFlight passCheckpoint:@"UID_OPT_IN"];
     }
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setInteger:buttonIndex+1 forKey:@"canShareUrls"];
@@ -525,7 +525,7 @@ Response *currentResponse;
     } else if (!self.toTextField.isGeocoded) {
         textField = self.toTextField;
     } else {
-        [TestFlight passCheckpoint:@"DIRECTIONS_LONG_TAP_NO_PIN_ALLOWED"];
+   //     [TestFlight passCheckpoint:@"DIRECTIONS_LONG_TAP_NO_PIN_ALLOWED"];
         return;
     }
     [TestFlight passCheckpoint:@"DIRECTIONS_LONG_TAP_DROP_PIN"];
