@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad
 {
-    [TestFlight passCheckpoint:@"ABOUT"];
+   // [TestFlight passCheckpoint:@"ABOUT"];
     
     [super viewDidLoad];
 }

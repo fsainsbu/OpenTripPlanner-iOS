@@ -53,7 +53,7 @@
 
 - (void)panToUserLocation:(id)sender
 {
-    [TestFlight passCheckpoint:@"ITINERARY_PAN_TO_USER_LOCATION"];
+   // [TestFlight passCheckpoint:@"ITINERARY_PAN_TO_USER_LOCATION"];
     self.needsPanToUserLocation = YES;
     [self enableUserLocation];
 }

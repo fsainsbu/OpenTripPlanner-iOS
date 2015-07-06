@@ -173,7 +173,7 @@ Response *currentResponse;
 
 - (void)go:(id)sender
 {
-    [TestFlight passCheckpoint:@"DIRECTIONS_GO"];
+  //  [TestFlight passCheckpoint:@"DIRECTIONS_GO"];
     HUD = [[MBProgressHUD alloc] initWithView:self.view];
 	[self.view addSubview:HUD];
 	HUD.labelText = @"Routing";
@@ -358,7 +358,7 @@ Response *currentResponse;
 
 - (void)switchFromAndTo:(id)sender
 {
-    [TestFlight passCheckpoint:@"DIRECTIONS_SWITCH_FROM_TO"];
+  //  [TestFlight passCheckpoint:@"DIRECTIONS_SWITCH_FROM_TO"];
     
     [self.fromTextField switchValuesWithOther];
     
@@ -373,7 +373,7 @@ Response *currentResponse;
 }
 
 - (IBAction)modeChanged:(id)sender {
-    [TestFlight passCheckpoint:@"DIRECTIONS_CHANGE_MODE"];
+  //  [TestFlight passCheckpoint:@"DIRECTIONS_CHANGE_MODE"];
     if (((UISegmentedControl *)sender).selectedSegmentIndex < 2) {
         self.timeButton.enabled = YES;
     } else {
@@ -386,7 +386,7 @@ Response *currentResponse;
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    [TestFlight passCheckpoint:@"DIRECTIONS_DID_TYPE_INTO_TEXTFIELD"];
+    //[TestFlight passCheckpoint:@"DIRECTIONS_DID_TYPE_INTO_TEXTFIELD"];
     [self panMapToCurrentGeocodedTextField];
 }
 
@@ -432,7 +432,7 @@ Response *currentResponse;
 
 - (void)panToUserLocation:(id)sender
 {
-    [TestFlight passCheckpoint:@"DIRECTIONS_PAN_TO_USER_LOCATION"];
+   // [TestFlight passCheckpoint:@"DIRECTIONS_PAN_TO_USER_LOCATION"];
     self.needsPanToUserLocation = YES;
     [self enableUserLocation];
 }
@@ -501,7 +501,7 @@ Response *currentResponse;
 - (void)mapView:(RMMapView *)mapView didFailToLocateUserWithError:(NSError *)error
 {
     // Alert user that location couldn't be detirmined.
-    [TestFlight passCheckpoint:@"DIRECTIONS_FAILED_TO_LOCATE_USER"];
+   // [TestFlight passCheckpoint:@"DIRECTIONS_FAILED_TO_LOCATE_USER"];
 }
 
 - (void)singleTapOnMap:(RMMapView *)map at:(CGPoint)point
@@ -528,7 +528,7 @@ Response *currentResponse;
    //     [TestFlight passCheckpoint:@"DIRECTIONS_LONG_TAP_NO_PIN_ALLOWED"];
         return;
     }
-    [TestFlight passCheckpoint:@"DIRECTIONS_LONG_TAP_DROP_PIN"];
+   // [TestFlight passCheckpoint:@"DIRECTIONS_LONG_TAP_DROP_PIN"];
     [self updateTextField:textField withText:@"Dropped Pin" andLocation:location];
 }
 
@@ -579,7 +579,7 @@ Response *currentResponse;
 
 - (void)mapView:(RMMapView *)map didEndDragAnnotation:(RMAnnotation *)annotation
 {
-    [TestFlight passCheckpoint:@"DIRECTIONS_DRAGGED_PIN"];
+   // [TestFlight passCheckpoint:@"DIRECTIONS_DRAGGED_PIN"];
     annotation.coordinate = [map pixelToCoordinate:annotation.position];
     _dragOffset = 0;
     
@@ -651,7 +651,7 @@ RKResponse* _OTPResponse = nil;
 
 - (void)request:(RKRequest*)request didLoadResponse:(RKResponse*)response
 {
-    [TestFlight passCheckpoint:@"DIRECTIONS_RECEIVED_RESPONSE_FROM_API"];
+  //  [TestFlight passCheckpoint:@"DIRECTIONS_RECEIVED_RESPONSE_FROM_API"];
     //NSLog(@"Loaded payload: %@", [response bodyAsString]);
     _OTPResponse = response;
     // Save the URL so we can display it in the feedback email if needed.
@@ -661,7 +661,7 @@ RKResponse* _OTPResponse = nil;
 
 - (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObjects:(NSArray*)objects
 {
-    [TestFlight passCheckpoint:@"DIRECTIONS_LOADED_PLAN_FROM_API_RESPONSE"];
+ //   [TestFlight passCheckpoint:@"DIRECTIONS_LOADED_PLAN_FROM_API_RESPONSE"];
     //NSLog(@"Loaded plan: %@", objects);
     [HUD hide:YES];
 
@@ -677,7 +677,7 @@ RKResponse* _OTPResponse = nil;
 - (void)objectLoader:(RKObjectLoader*)objectLoader didFailWithError:(NSError*)error
 {
     //NSLog(@"Hit error: %@", error);
-    [TestFlight passCheckpoint:@"DIRECTIONS_RECEIVED_ERROR_FROM_API"];
+   // [TestFlight passCheckpoint:@"DIRECTIONS_RECEIVED_ERROR_FROM_API"];
     [HUD hide:YES];
 
     if(_OTPResponse != nil) {

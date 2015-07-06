@@ -27,7 +27,7 @@
     #ifdef TESTING
       //  [TestFlight setDeviceIdentifier:[[UIDevice currentDevice] uniqueIdentifier]];
     #endif
-    [TestFlight takeOff:@"<YOUR TESTFLIGHT TEAM TOKEN HERE>"];
+   // [TestFlight takeOff:@"<YOUR TESTFLIGHT TEAM TOKEN HERE>"];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *deviceId = [defaults stringForKey:@"deviceId"];

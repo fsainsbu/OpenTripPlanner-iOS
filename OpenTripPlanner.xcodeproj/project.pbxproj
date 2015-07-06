@@ -46,9 +46,6 @@
 		93B179C0162BBAB400F09EC6 /* OTPUnitFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B179BF162BBAB400F09EC6 /* OTPUnitFormatter.m */; };
 		93B179C3162BC69C00F09EC6 /* OTPUnitData.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B179C2162BC69C00F09EC6 /* OTPUnitData.m */; };
 		93B179C6162D253000F09EC6 /* OTPStepCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B179C5162D252F00F09EC6 /* OTPStepCell.m */; };
-		93EA08D3164582A500705096 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93EA08CF164582A500705096 /* libTestFlight.a */; };
-		93EA08D4164582A500705096 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 93EA08D0164582A500705096 /* README.md */; };
-		93EA08D5164582A500705096 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 93EA08D1164582A500705096 /* release_notes.md */; };
 		93F4D9DD1659B628002C2790 /* Error.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F4D9DC1659B628002C2790 /* Error.m */; };
 		93F4D9E01659B70B002C2790 /* Response.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F4D9DF1659B70B002C2790 /* Response.m */; };
 		93F4DA311662ED1A002C2790 /* ZUUIRevealController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F4DA301662ED1A002C2790 /* ZUUIRevealController.m */; };
@@ -386,10 +383,6 @@
 		93B179C2162BC69C00F09EC6 /* OTPUnitData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTPUnitData.m; sourceTree = "<group>"; };
 		93B179C4162D252F00F09EC6 /* OTPStepCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTPStepCell.h; sourceTree = "<group>"; };
 		93B179C5162D252F00F09EC6 /* OTPStepCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTPStepCell.m; sourceTree = "<group>"; };
-		93EA08CF164582A500705096 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
-		93EA08D0164582A500705096 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		93EA08D1164582A500705096 /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
-		93EA08D2164582A500705096 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		93F4D9DB1659B628002C2790 /* Error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Error.h; sourceTree = "<group>"; };
 		93F4D9DC1659B628002C2790 /* Error.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Error.m; sourceTree = "<group>"; };
 		93F4D9DE1659B70B002C2790 /* Response.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Response.h; sourceTree = "<group>"; };
@@ -669,7 +662,6 @@
 				CCCDFB6815EEAAC600B26133 /* UIKit.framework in Frameworks */,
 				CCCDFB6A15EEAAC600B26133 /* Foundation.framework in Frameworks */,
 				CCCDFB6C15EEAAC600B26133 /* CoreGraphics.framework in Frameworks */,
-				93EA08D3164582A500705096 /* libTestFlight.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -815,17 +807,6 @@
 				9378877616154AF2007CF24C /* libMapView.a */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		93EA08CE164582A500705096 /* TestFlightSDK1 */ = {
-			isa = PBXGroup;
-			children = (
-				93EA08CF164582A500705096 /* libTestFlight.a */,
-				93EA08D0164582A500705096 /* README.md */,
-				93EA08D1164582A500705096 /* release_notes.md */,
-				93EA08D2164582A500705096 /* TestFlight.h */,
-			);
-			path = TestFlightSDK1;
 			sourceTree = "<group>";
 		};
 		CC2316D11626067D00EE0F48 /* MapBoxResources */ = {
@@ -1090,7 +1071,6 @@
 			isa = PBXGroup;
 			children = (
 				CC03B5F116693B94006BD398 /* CoreText.framework */,
-				93EA08CE164582A500705096 /* TestFlightSDK1 */,
 				9378876A16154AF2007CF24C /* MapView.xcodeproj */,
 				9378874416154865007CF24C /* RestKit.xcodeproj */,
 				CCCDFB6615EEAAC600B26133 /* Frameworks */,
@@ -1234,6 +1214,11 @@
 				CLASSPREFIX = OTP;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = OpenPlans;
+				TargetAttributes = {
+					CCCDFB6215EEAAC600B26133 = {
+						DevelopmentTeam = 822EU883UU;
+					};
+				};
 			};
 			buildConfigurationList = CCCDFB5D15EEAAC600B26133 /* Build configuration list for PBXProject "OpenTripPlanner" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1493,8 +1478,6 @@
 				0D4553E516432356006D4A3B /* popup-walk.png in Resources */,
 				0D4553E616432356006D4A3B /* popup-walk@2x.png in Resources */,
 				0D4553E716432356006D4A3B /* transfer_walk.png in Resources */,
-				93EA08D4164582A500705096 /* README.md in Resources */,
-				93EA08D5164582A500705096 /* release_notes.md in Resources */,
 				CC2C154A1666D28A006E4619 /* marker-dropped-cropped.png in Resources */,
 				CC2C154B1666D28A006E4619 /* marker-dropped-cropped@2x.png in Resources */,
 				CC2C154C1666D28A006E4619 /* marker-end-cropped.png in Resources */,
@@ -1711,8 +1694,8 @@
 		CCCDFB9115EEAAC600B26133 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Aaron Sutula (A4CW4AA7D5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Aaron Sutula (A4CW4AA7D5)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OpenTripPlanner/OpenTripPlanner-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -1731,8 +1714,8 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "OTP Mobile";
-				PROVISIONING_PROFILE = "70B10A69-2E7A-4667-8186-09B6FC108163";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "70B10A69-2E7A-4667-8186-09B6FC108163";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "13fd7d8a-4ba1-4e29-9498-85098c044800";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1741,8 +1724,8 @@
 		CCCDFB9215EEAAC600B26133 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: OpenPlans Inc";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: OpenPlans Inc";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OpenTripPlanner/OpenTripPlanner-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
@@ -1761,8 +1744,8 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "OTP Mobile";
-				PROVISIONING_PROFILE = "C7903C8D-6769-4A24-8CC9-5D3FE5659390";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E773ACC5-2A35-4AC1-A104-445C24ED4438";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "13fd7d8a-4ba1-4e29-9498-85098c044800";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

@@ -36,7 +36,7 @@
 
 - (void)viewDidLoad
 {
-    [TestFlight passCheckpoint:@"ITINERARIES_VIEW"];
+  //  [TestFlight passCheckpoint:@"ITINERARIES_VIEW"];
     [super viewDidLoad];
 
     _modeIcons = @{
@@ -250,7 +250,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    [TestFlight passCheckpoint:@"ITINERARIES_SELECTED_ONE"];
+ //   [TestFlight passCheckpoint:@"ITINERARIES_SELECTED_ONE"];
     NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
     
     OTPItineraryViewController *vc = (OTPItineraryViewController *)segue.destinationViewController;
@@ -263,7 +263,7 @@
 
 - (void)dismiss:(id)sender
 {
-    [TestFlight passCheckpoint:@"ITINERARIES_DONE"];
+   // [TestFlight passCheckpoint:@"ITINERARIES_DONE"];
     ((OTPAppDelegate *)[[UIApplication sharedApplication] delegate]).itineraryMapViewController.mapView.delegate = nil;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
